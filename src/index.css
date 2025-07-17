@@ -1,0 +1,8 @@
+/* fonts.css */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+/* fonts.css */
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
