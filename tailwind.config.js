@@ -17,6 +17,7 @@ export default {
     fontFamily: {
       cinzel: ['Cinzel', 'serif'],
       antic: ['"Antic Didone"', 'serif'],
+      bellefair: ['Bellefair', 'serif'],
     },
   },
   plugins: [],
