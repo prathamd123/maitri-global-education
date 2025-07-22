@@ -7,3 +7,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* dot effect in footer links */
+.dot-link::before {
+  content: '•';
+  margin-right: 8px;
+  color: black; /* or your desired dot color */
+}
