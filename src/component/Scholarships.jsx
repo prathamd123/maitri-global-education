@@ -46,7 +46,7 @@ const Scholarships = () => {
   const getIdx = (col, row) => col + row * 3;
 
   return (
-     <div className="w-full min-h-screen flex flex-col xl:flex-row bg-black">
+     <div className="w-full min-h-screen flex flex-col xl:flex-row">
       {/* 📷 Image Section - On Top in Small Screens */}
       <div className="order-1 xl:order-2 w-full xl:w-1/3 relative flex items-center justify-center min-h-[200px] lg:min-h-0 h-64 lg:h-auto mt-8 lg:mt-0">
         <img
