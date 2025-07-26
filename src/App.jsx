@@ -4,6 +4,7 @@ import Carousel from './component/Carousel'
 import Courses from './component/Courses'
 import Blogs from './component/Blogs'
 import Scholarships from './component/Scholarships'
+import Event from './component/Event'
 import Footer from './component/Footer'
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Carousel/>
         <Blogs/>
         <Scholarships/>
+        <Event/>
         <Footer/>
 
       </div>
