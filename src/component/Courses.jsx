@@ -58,7 +58,7 @@ export default function Courses() {
   };
 
   return (
-    <div className="relative w-full h-screen overflow-hidden font-serif text-white bg-black">
+    <div className="relative w-full h-screen overflow-hidden font-serif text-white ">
       {/* Background Layer */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">

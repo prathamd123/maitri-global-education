@@ -94,7 +94,7 @@ const Carousel = () => {
   return (
     <section
       ref={carouselRef}
-      className="relative min-h-screen overflow-hidden bg-black flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-0 py-10"
+      className="relative min-h-screen overflow-hidden  flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-0 py-10"
     >
       {/* Decorative image */}
       <div
