@@ -38,7 +38,7 @@ export default function Carousel() {
   };
 
   return (
-    <div className="w-full h-screen flex items-center justify-center relative overflow-hidden">
+    <div className="w-full h-screen  flex items-center justify-center relative overflow-hidden">
       {/* Navigation Buttons */}
       <button
         onClick={prev}
@@ -75,7 +75,7 @@ export default function Carousel() {
                 />
               </div>
               <h3 className="mt-4 text-black text-2xl font-semibold">{item.title}</h3>
-              <p className="text-gray-700">{item.desc}</p>
+              <p className="text-gray-800">{item.desc}</p>
             </div>
           );
         })}
