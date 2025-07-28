@@ -1,6 +1,7 @@
 import Navbar from './component/Navbar'
 import Hero from './component/Hero'
 import Carousel from './component/Carousel'
+import Service from './component/service'
 import Courses from './component/Courses'
 import Blogs from './component/Blogs'
 import Testimonial from './component/Testimonial'
@@ -13,8 +14,9 @@ function App() {
       <div>
         <Navbar/>
         <Hero/>
-        <Courses/>
+         <Courses/>        
         <Carousel/>
+       <Service/>
         <Blogs/>
         <Testimonial/>
         <Scholarships/>
