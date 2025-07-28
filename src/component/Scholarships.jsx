@@ -45,6 +45,8 @@ const Scholarships = () => {
 
   const getIdx = (col, row) => col + row * 3;
 
+  const isDesktop = window.innerWidth >= 1024; // Assuming lg breakpoint is 1024px
+
   return (
      <div className="w-full min-h-screen flex flex-col xl:flex-row">
       {/* 📷 Image Section - On Top in Small Screens */}
@@ -71,7 +73,7 @@ const Scholarships = () => {
                 className={`scholarship-card bg-black rounded-2xl border border-gray-700 flex flex-row items-center overflow-hidden cursor-pointer shadow-lg transition-all duration-500 min-h-[110px] max-h-[160px]`}
                 style={{
                   zIndex: isExpanded ? 20 : 1,
-                  height: isExpanded ? 160 : 110,
+                  height: isExpanded ? 150 : 100,
                 }}
                 onClick={() => setExpandedIdx(isExpanded ? null : idx)}
               >
@@ -95,10 +97,12 @@ const Scholarships = () => {
               </div>
             );
           })}
-        </div>
-
+       
         {/* Desktop layout */}
-         <div className="hidden xl:flex flex-1 gap-6 h-[700px]">
+         <div className="hidden xl:flex flex-1 gap-6 h-[700px]"
+        {/* Desktop: 3 columns, 2 cards each */}
+        <div className="hidden lg:flex flex-1 gap-6 h-[650px]">
+
           {columns.map((colCards, colIdx) => {
             return (
               <div key={colIdx} className="flex flex-col gap-6 h-full flex-1">
@@ -155,6 +159,7 @@ const Scholarships = () => {
           })}
         </div>
       </div>
+
     </div>
   );
 };

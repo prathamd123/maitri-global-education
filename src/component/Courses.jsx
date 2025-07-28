@@ -28,7 +28,7 @@ const courseData = [
   },
 ];
 
-const AUTO_INTERVAL = 5000;
+const AUTO_INTERVAL = 6000;
 
 export default function Courses() {
   const [index, setIndex] = useState(0);
@@ -45,20 +45,22 @@ export default function Courses() {
 
   const current = courseData[index];
 
-  const springTransition = {
-    type: "spring",
-    stiffness: 60,
-    damping: 20,
-  };
-
+ const springTransition = {
+  type: "spring",
+  stiffness: 500,   // Lower stiffness for slower, smoother motion
+  damping: 40,     // Higher damping to remove overshoot and bounce
+  mass: 0.1,       // Slightly higher mass makes motion feel more organic
+};
   const slideVariants = {
-    initial: { x: 100, opacity: 0 },
+    initial: { x: 60, opacity: 0 },
     animate: { x: 0, opacity: 1 },
-    exit: { x: -100, opacity: 0 },
+    exit: { x: -60, opacity: 0 },
   };
 
   return (
     <div className="relative w-full h-screen overflow-hidden font-serif text-white ">
+    <div className="relative w-full min-h-screen h-auto overflow-hidden font-serif text-white bg-black">
+    main
       {/* Background Layer */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
@@ -82,32 +84,37 @@ export default function Courses() {
       </div>
 
       {/* Header */}
-      <div className="absolute top-0 w-full text-center py-6 text-xl md:text-2xl lg:text-3xl font-semibold uppercase tracking-widest z-30">
+      <div className="absolute top-0 w-full text-center py-4 text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold uppercase tracking-widest z-30">
         University by Streams
       </div>
 
       {/* Text + Card Content */}
-      <div className="relative z-30 flex flex-col md:flex-row items-center md:items-start h-full gap-6 px-6 md:px-20 pt-28 md:pt-40">
+      <div className="relative z-30 flex flex-col md:flex-row items-center md:items-start h-full gap-4 px-3 sm:px-6 md:px-12 lg:px-20 pt-24 sm:pt-28 md:pt-36 lg:pt-40">
         <AnimatePresence mode="wait">
           <motion.div
             key={current.title + "-text"}
-            className="w-full md:w-1/2 space-y-6"
+            className="w-full md:w-1/2 space-y-4 sm:space-y-6"
             variants={slideVariants}
             initial="initial"
             animate="animate"
             exit="exit"
             transition={springTransition}
           >
-            <h1 className="text-4xl md:text-5xl font-semibold uppercase">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold uppercase">
               {current.title}
             </h1>
-            <p className="text-base md:text-lg leading-relaxed text-gray-300">
+            <p className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-300">
               {current.description}
             </p>
+            <div className="pt-2">
+              <button className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pruple-500 text-white rounded-lg shadow-md hover:from-purple-700 hover:to-grey-600 transition-all duration-200 text-base sm:text-lg  w-full sm:w-auto">
+                Learn More
+              </button>
+            </div>
           </motion.div>
         </AnimatePresence>
 
-        <div className="relative w-64 h-80 md:w-72 md:h-[400px] shrink-0">
+        <div className="relative w-48 h-60 sm:w-56 sm:h-72 md:w-72 md:h-[400px] shrink-0">
           <AnimatePresence mode="wait">
             <motion.div
               key={current.image + "-card"}
@@ -131,7 +138,7 @@ export default function Courses() {
       {/* Next Thumbnail Button */}
       <button
         onClick={handleNext}
-        className="absolute z-30 bottom-6 right-6 md:top-1/2 md:-translate-y-1/2 md:right-10 w-24 h-32 md:w-32 md:h-44 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform"
+        className="absolute z-30 bottom-4 right-4 sm:bottom-6 sm:right-6 md:top-1/2 md:-translate-y-1/2 md:right-10 w-16 h-20 sm:w-24 sm:h-32 md:w-32 md:h-44 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform"
         aria-label="Next Course"
       >
         <img
