@@ -122,9 +122,15 @@ function Footer() {
                 </button>
               </div>
             </div>
+           
           </div>
+           <div className='flex items-center justify-center'>
+          <p className='text-xl text-black'>copyright 2025</p>
+            </div>
         </div>
+        
       </div>
+      
     </div>
   );
 }

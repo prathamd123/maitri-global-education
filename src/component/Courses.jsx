@@ -58,6 +58,7 @@ export default function Courses() {
   };
 
   return (
+    <div className="relative w-full h-screen overflow-hidden font-serif text-white ">
     <div className="relative w-full min-h-screen h-auto overflow-hidden font-serif text-white bg-black">
       {/* Background Layer */}
       <div className="absolute inset-0 z-0">
@@ -105,8 +106,8 @@ export default function Courses() {
               {current.description}
             </p>
             <div className="pt-2">
-              <button className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pruple-500 text-white rounded-lg shadow-md hover:from-purple-700 hover:to-grey-600 transition-all duration-200 text-base sm:text-lg  w-full sm:w-auto">
-                Learn More
+              <button className="px-6 py-3 bg-blue-700 text-white rounded-lg shadow-md hover:bg-blue-800 transition-all duration-200 text-base sm:text-lg">
+                Explore
               </button>
             </div>
           </motion.div>
@@ -146,5 +147,6 @@ export default function Courses() {
         />
       </button>
     </div>
+      </div>
   );
 }
