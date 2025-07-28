@@ -112,7 +112,7 @@ export default function Courses() {
           </motion.div>
         </AnimatePresence>
 
-        <div className="relative w-48 h-60 sm:w-56 sm:h-72 md:w-72 md:h-[400px] shrink-0">
+        <div className="relative w-56 h-72 sm:w-60 sm:h-96 md:w-80 md:h-[400px] lg:w-[380px] lg:h-[480px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={current.image + "-card"}
