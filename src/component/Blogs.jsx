@@ -59,13 +59,13 @@ const ImageSlider = () => {
   const rightImage = images[(index + 2) % images.length];
 
   return (
-    <div className="w-full bg-gray-100 px-4 py-4">
+    <div className="w-full bg-gray-100 px-4 py-4 ov">
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-center text-[#CA8304] mb-12">
         Blogs
       </h1>
 
       {/* Responsive Layout */}
-      <div className="flex flex-col sm:flex-row w-full gap-6 justify-center items-stretch">
+      <div className="flex flex-col sm:flex-row w-full gap-6 justify-center items-stretch overflow-x-hidden">
 
         {/* Left Image (hidden on small screens) */}
         <div className="hidden md:flex w-full md:w-[55%] flex-col gap-4">
